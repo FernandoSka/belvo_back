@@ -17,6 +17,7 @@ RUN mkdir /code && mkdir -p /vol/web/media
 COPY . /code/
 
 RUN /install_packages.sh
+RUN chmod +x /code/entrypoint.sh
 
 WORKDIR /code
 
