@@ -2,7 +2,7 @@
 
 function run_app {
   echo "Initialiazing app ..."
-  gunicorn --workers 3 --bind 0.0.0.0:8000 config.wsgi --timeout 300
+  gunicorn --workers 3 --bind 0.0.0.0:8000 belvo.wsgi --timeout 300
 }
 
 function run_dev_app {
