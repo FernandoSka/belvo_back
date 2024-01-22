@@ -24,8 +24,8 @@ function run_debug_app {
 #echo "Creating groups ..."
 #python manage.py create_groups
 #echo "Creating admin user ..."
-#python manage.py create_admin_user
-#echo "Collecting statics ..."
+python manage.py create_admin_user
+echo "Collecting statics ..."
 #python manage.py collectstatic --noinput
 #echo "Starting cron ..."
 #service cron start
