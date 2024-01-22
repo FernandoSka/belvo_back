@@ -15,28 +15,11 @@ function run_debug_app {
   python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 manage.py runserver 0.0.0.0:8000
 }
 
-#echo "Waiting for Database ..."
-#python manage.py wait_for_db
-#echo "Aplying migrations ..."
-#python manage.py migrate
-#echo "Creating services ..."
-#python manage.py create_services
-#echo "Creating groups ..."
-#python manage.py create_groups
-#echo "Creating admin user ..."
+echo "Aplying migrations ..."
+python manage.py migrate
 python manage.py create_admin_user
 echo "Collecting statics ..."
-#python manage.py collectstatic --noinput
-#echo "Starting cron ..."
-#service cron start
-#echo "$SCHEDULER_FORMAT SCHEDULER_PASSWORD=$SCHEDULER_PASSWORD SCHEDULER_HOST=$SCHEDULER_HOST /usr/local/bin/python /code/core/cron.py >> /logs-tbi/logs.log 2>&1" | crontab -
-
-
-#python manage.py loaddata instruccionfinanciera.json
-#python manage.py loaddata instruccionfinancieraautomatica.json
-#python manage.py loaddata instruccionfinancieraprevia.json
-#python manage.py loaddata operacion.json
-#python manage.py loaddata producto.json
+python manage.py collectstatic --noinput
 
 
 
